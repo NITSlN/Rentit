@@ -12,7 +12,7 @@ function PriceRangeDropdown() {
       '1000 - 1999'
   ]
   return (
-    <Dropdown property={price} setProperty={setPrice} list={prices} type={"Price Range"}/>
+    <Dropdown property={price} setProperty={setPrice} dropdownList={prices} type={"Price Range"}/>
   )
 }
 

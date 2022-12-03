@@ -6,6 +6,7 @@ import { housesData } from '../data'
 export const HouseContext = createContext()
 
 const HouseContextProvider = ({ children }) => {
+
   const [houses, setHouses] = useState(housesData)
   const [country, setCountry] = useState('All')
   const [countries, setCountries] = useState([])
@@ -16,6 +17,7 @@ const HouseContextProvider = ({ children }) => {
 
   const [loading, setLoading] = useState(false)
 
+  // Getting all countries
   useEffect(() => {
     // return all countries
     const allCountries = houses.map((house) => {
@@ -29,6 +31,7 @@ const HouseContextProvider = ({ children }) => {
     setCountries(uniqueCountries)
   }, [])
 
+  // Getting all property type
   useEffect(() => {
     // return only countries
     const allProperties = houses.map((house) => {
@@ -42,21 +45,21 @@ const HouseContextProvider = ({ children }) => {
     setProperties(uniqueProperties)
   }, [])
 
+  // Checks if filtered is applied or not
   const isDefault = (str) => {
     if (str === 'All') return true
     return false
   }
   const handleClick = () => {
     setLoading(true)
-    // console.log(new Date(date)>new Date('2022-12-04'));
-    const priceArr = price.split(' - ')
-    const minPrice = parseInt(priceArr[0])
-    const maxPrice = parseInt(priceArr[1])
-
+    
     var filteredHouse = housesData
-
     // if price filtered is applied
     if (!isDefault(price)) {
+      const priceArr = price.split(' - ')
+      const minPrice = parseInt(priceArr[0])
+      const maxPrice = parseInt(priceArr[1])
+
       filteredHouse = filteredHouse.filter((house) => {
         const housePrice = parseInt(house.price)
         if (housePrice <= maxPrice && housePrice >= minPrice) return house
@@ -87,7 +90,7 @@ const HouseContextProvider = ({ children }) => {
 
         if (
           houseDate < moveInDate ||
-          houseDate - moveInDate < oneDayDuration * 10
+          houseDate - moveInDate < oneDayDuration * 10 // if house is available after 10 days of move in
         )
           return house
       })

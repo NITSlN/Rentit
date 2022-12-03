@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .search-panel{
+        @apply px-[30px] py-6 mb-12 mx-auto flex flex-col lg:flex-row justify-between gap-4 lg:gap-x-3 items-center relative lg:-top-4 border-2 border-purple-100 rounded-lg
+    }
+    .search-button {
+        @apply hover:bg-violet-700 bg-violet-500 translate-y-2 w-full lg:max-w-[162px] h-14 rounded-lg text-white text-lg;
+    }
+
+    .dropdown-item {
+        @apply bg-gray-50 min-w-[200px] text-gray-500 first:rounded-tr-lg first:rounded-tl-lg last:rounded-br-lg last:rounded-bl-lg hover:bg-gray-100 px-8 py-2 last:pb-3;
+    }
+}

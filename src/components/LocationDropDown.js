@@ -6,7 +6,7 @@ function LocationDropDown() {
   const { country, setCountry,countries } = useContext(HouseContext);
 
   return (
-    <Dropdown property={country} setProperty={setCountry} list={countries} type={"Choose Location"}/>
+    <Dropdown property={country} setProperty={setCountry} dropdownList={countries} type={"Choose Location"}/>
   )
 }
 

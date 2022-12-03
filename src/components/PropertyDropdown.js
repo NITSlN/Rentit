@@ -6,7 +6,7 @@ function PropertyDropdown() {
   const { property, setProperty, properties } = useContext(HouseContext)
   
   return (
-    <Dropdown property={property} setProperty={setProperty} list={properties} type={"Property Type"}/>
+    <Dropdown property={property} setProperty={setProperty} dropdownList={properties} type={"Property Type"}/>
   )
 }
 

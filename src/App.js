@@ -1,14 +1,15 @@
-// import './App.css';
-import House from './components/House';
+
+import Banner from './components/Banner';
 import HouseList from './components/HouseList';
 import Navbar from './components/Navbar';
 import Search from './components/Search';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navbar/>
       <div className='w-4/5 pt-44 mx-auto'>
+      <Banner/>
       <Search/>
       <HouseList/>  
       </div>
