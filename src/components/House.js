@@ -3,7 +3,7 @@ import React from 'react'
 function House({house}) {
     const {name,image,address,bedrooms,bathrooms,surface,price} = house
   return (
-    <div className="cursor-pointer hover:-translate-y-2 transition-all duration-[.3s] max-w-sm rounded text-left overflow-hidden shadow-lg">
+    <div className="scale-90 cursor-pointer hover:-translate-y-2 transition-all duration-[.3s] max-w-sm rounded text-left overflow-hidden shadow-lg">
       <img
         className="w-full"
         src={image}
