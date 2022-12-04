@@ -7,12 +7,12 @@ function Dropdown({ property, setProperty, dropdownList, type }) {
   return (
     <div className="w-full z-10 text-gray-500">
       {/* Filter type */}
-      <p className='ml-2'>{type}</p>
+      <p className='pl-2'>{type}</p>
       <div
         className="border rounded-lg cursor-pointer py-3 px-4"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p className="text-left flex justify-between p-1">
+        <p className="text-left flex justify-between">
           {property}
           <BiChevronDown className="inline translate-y-1" />
         </p>
